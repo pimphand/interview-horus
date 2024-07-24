@@ -209,7 +209,7 @@
 
                     </div>
 
-                <button class="btn btn-dark btn-block text-white">Log Out</button>
+                <button class="btn btn-dark btn-block text-white logout">Log Out</button>
             </aside>
         </main>
     </div>
@@ -226,7 +226,7 @@
             <div class="_show_categories">
 
             </div>
-        <button class="btn btn-dark btn-block w-75 text-white">Log Out</button>
+        <button class="btn btn-dark btn-block w-75 text-white logout">Log Out</button>
     </div>
 
 
@@ -381,6 +381,11 @@
                     }
                 });
             }
+
+            $(document).on('click', '.logout', function() {
+                localStorage.removeItem('token');
+                window.location.href = '/login';
+            });
         });
     </script>
 </body>

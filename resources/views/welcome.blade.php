@@ -195,7 +195,7 @@
 
                     </div>
 
-                <button class="btn btn-dark btn-block text-white">Log Out</button>
+                <button class="btn btn-dark btn-block text-white logout">Log Out</button>
             </aside>
             <section class="flex-fill p-4">
                 <h2 class="h4 mb-4">List Voucher</h2>
@@ -217,7 +217,7 @@
             <div class="_show_categories">
 
             </div>
-        <button class="btn btn-dark btn-block w-75 text-white">Log Out</button>
+        <button class="btn btn-dark btn-block w-75 text-white logout">Log Out</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -377,6 +377,11 @@
                     }
                 });
             }
+        });
+
+        $(document).on('click', '.logout', function() {
+            localStorage.removeItem('token');
+            window.location.href = '/login';
         });
     </script>
 </body>
